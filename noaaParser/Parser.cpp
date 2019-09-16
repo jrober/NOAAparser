@@ -1,10 +1,11 @@
 #include "Parser.h"
 
-void Parser::parseFile(string filename)
+void Parser::parseFile(ifstream& is)
 {
+	ofstream os;
+	bool debug = true;
+
 	string line;
-	ifstream is;
-	is.open(filename);
 	
 	getline(is, line);
 
@@ -22,9 +23,16 @@ void Parser::parseFile(string filename)
 
 		Data_Block db(header, drVec);
 
-		db.coutData_Block();
 		data.push_back(db);
+		
+		if (debug == true) {
+			os.open("outfile.txt");
+			db.fileOut(os);
+		}
 	}
+
+	os.close();
+	
 }
 
 string Parser::trim(string& line, int& whitespaceCount)

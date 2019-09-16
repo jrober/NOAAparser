@@ -16,7 +16,7 @@ class Parser
 
 	public:
 		Parser() {};
-		void parseFile(string filename);
+		void parseFile(ifstream& is);
 		string trim(string& line, int& whitespaceCount);
 };
 

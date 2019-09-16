@@ -3,6 +3,7 @@
 #include <string>
 #include <iostream>
 #include <fstream>
+#include <iomanip>
 
 using namespace std;
 
@@ -55,6 +56,8 @@ class Header
 		uint16_t getNum_levels() {
 			return numLevels;
 		}
+
+		void fileOut(ofstream& os);
 		
 };
 

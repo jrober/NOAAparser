@@ -15,8 +15,21 @@
 using namespace std;
 
 int main() {
+
 	Parser parser;
-	string filename = "C:/Users/A10/Documents/Justins/ACM00078861-data.txt";
-	parser.parseFile(filename);
+	
+	//string filename = "C:/Users/A10/Documents/Justins/AEM00041217-data.txt"; // ytd
+	string filename = "C:/Users/A10/Documents/Justins/ACM00078861-data_header.txt"; // only one data block
+
+	ifstream is(filename);
+
+	if (!is.good()) {
+		cout << "Error -> invalid filename " << filename << endl;
+	}
+	else {
+		parser.parseFile(is);
+	}
+
+	is.close();
 	return 0;
 }

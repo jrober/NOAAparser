@@ -3,6 +3,7 @@
 #include<string>
 #include<fstream>
 #include<iostream>
+#include<iomanip>
 
 using namespace std;
 
@@ -36,6 +37,8 @@ class Data_Record
 		};
 
 		void coutData_Record();
+
+		void fileOut(ofstream& os);
 
 };
 

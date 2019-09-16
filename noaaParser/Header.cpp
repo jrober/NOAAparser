@@ -136,8 +136,43 @@ void Header::parse(string line)
 
 void Header::coutHeader()
 {
-	cout << "#" << id << " " << year << " " << month << " " <<
-		day << " " << hour << " " << reltime << " " <<
-		numLevels << " " << p_src << " " << np_src << " " <<
-		latitude << " " << longitude;
+	cout << "#" << setw(11) << id << " " << setw(4) << year << " ";
+	if (month < 10)
+		cout << setw(1) << 0 << setw(1) << month << " ";
+	else
+		cout << setw(2) << month << " ";
+	if (day < 10)
+		cout << setw(1) << 0 << setw(1) << day << " ";
+	else
+		cout << setw(2) << day << " ";
+	if (hour < 10)
+		cout << setw(1) << 0 << setw(1) << hour << " ";
+	else
+		cout << setw(2) << hour << " ";
+		
+	cout << setw(4) << reltime << " " <<
+		 setw(4) << numLevels << " " << setw(8) << p_src << " " << setw(8) << np_src << " " <<
+		 setw(7) << latitude << " " << setw(8) << longitude;
+}
+
+
+void Header::fileOut(ofstream& os)
+{
+	os << "#" << setw(11) << id << " " << setw(4) << year << " ";
+	if (month < 10)
+		os << setw(1) << 0 << setw(1) << month << " ";
+	else
+		os << setw(2) << month << " ";
+	if (day < 10)
+		os << setw(1) << 0 << setw(1) << day << " ";
+	else
+		os << setw(2) << day << " ";
+	if (hour < 10)
+		os << setw(1) << 0 << setw(1) << hour << " ";
+	else
+		os << setw(2) << hour << " ";
+
+	os << setw(4) << reltime << " " <<
+		setw(4) << numLevels << " " << setw(8) << p_src << " " << setw(8) << np_src << " " <<
+		setw(7) << latitude << " " << setw(8) << longitude;
 }

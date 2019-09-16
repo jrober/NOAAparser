@@ -53,8 +53,16 @@ void Data_Record::parse(string line)
 
 void Data_Record::coutData_Record()
 {
-	cout << lvltyp1 << lvltyp2 << " " << etime << " "
-		 << press << pflag << gph << zflag << temp << 
-		 tflag << rh << " " << dpdp << " " << wdir << " " 
-		 << wspd;
+	cout << setw(1) << lvltyp1 << setw(1) << lvltyp2 << " " << setw(5) << etime << " "
+		 << setw(6) << press << setw(1) << pflag << setw(5) << gph << setw(1) << zflag << setw(5) << temp <<
+		 setw(1) << tflag << setw(5) << rh << " " << setw(5) << dpdp << " " << setw(5) << wdir << " "
+		 << setw(5) << wspd;
+}
+
+void Data_Record::fileOut(ofstream& os)
+{
+	os << setw(1) << lvltyp1 << setw(1) << lvltyp2 << " " << setw(5) << etime << " "
+		<< setw(6) << press << setw(1) << pflag << setw(5) << gph << setw(1) << zflag << setw(5) << temp <<
+		setw(1) << tflag << setw(5) << rh << " " << setw(5) << dpdp << " " << setw(5) << wdir << " "
+		<< setw(5) << wspd;
 }

@@ -21,5 +21,7 @@ class Data_Block
 		};
 
 		void coutData_Block();
+
+		void fileOut(ofstream& os);
 };
 
