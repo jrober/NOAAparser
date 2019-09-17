@@ -25,7 +25,7 @@ class Header
 		void parse(string);
 	
 	public:
-		// default constructor
+		// Default Constructor
 		Header() {};
 
 		// initialize header with a line

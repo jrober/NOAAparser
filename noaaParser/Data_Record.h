@@ -15,7 +15,7 @@ class Data_Record
 		int16_t etime;
 		int32_t press;
 		char pflag;
-		int16_t gph;
+		int32_t gph;
 		char zflag;
 		int16_t temp;
 		char tflag;
@@ -27,8 +27,7 @@ class Data_Record
 		void parse(string);
 
 	public:
-		
-		// default constructor
+		// Default constructor
 		Data_Record() {};
 
 		// initialize with a line
