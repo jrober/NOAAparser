@@ -2,8 +2,12 @@
 
 void Parser::parseFile(ifstream& is)
 {
+	
+	bool debug = false;
 	ofstream os;
-	bool debug = true;
+	
+	if(debug)
+		os.open("outfile.txt");
 
 	string line;
 	
@@ -26,8 +30,8 @@ void Parser::parseFile(ifstream& is)
 		data.push_back(db);
 		
 		if (debug == true) {
-			os.open("outfile.txt");
 			db.fileOut(os);
+			//db.coutData_Block();
 		}
 	}
 
